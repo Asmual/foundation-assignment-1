@@ -40,3 +40,27 @@ function getDayType(day) {
 // console.log(getDayType("friday"));    // "Weekend"
 // console.log(getDayType("MONDAY"));    // "Working Day"
 // console.log(getDayType("Bandarban")); // "Invalid Day"
+
+// Question 3: Username Gatekeeper
+function validateUsername(username) {
+    if (username.length < 4) {
+        return "Too Short";
+    }
+    if (username.includes(" ")) {
+        return "No Space Allowed";
+    }
+    if (username.toLowerCase().includes("admin")) {
+        return "Reserved Word";
+    }
+    return "Available";
+}
+
+// Test cases:
+// console.log(validateUsername("rahim123"));    // "Available"
+// console.log(validateUsername("ab"));          // "Too Short"
+// console.log(validateUsername("a b"));         // "Too Short"
+// console.log(validateUsername("abcd"));        // "Available"
+// console.log(validateUsername("rahim islam")); // "No Space Allowed"
+// console.log(validateUsername("superadmin99"));// "Reserved Word"
+// console.log(validateUsername("Admin_Rahim")); // "Reserved Word"
+
